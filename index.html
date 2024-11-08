@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jimmy's Diner</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/style.css">
+</head>
+
+<body>
+    <header>
+        <img src="burgershop.jpg" alt="Jimmy's Diner" id="header-image">
+        <h1>Jimmy's Diner</h1>
+        <h2>The best burgers and pizzas in town.</h2>
+    </header>
+
+    <!-- Menu container -->
+    <main>
+        <div id="menu-container">
+            <!-- Menu items will be injected here by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Total Price Section -->
+    <div id="total-price-container" style="display: none;">
+        <p>Total Price: $<span id="total-price">0.00</span></p>
+        <button id="checkout">Checkout</button>
+        <button id="clear-cart">Clear Cart</button>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+
+    <!-- Cart Preview Modal -->
+    <div id="cart-preview-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items-container"></div>
+            <h3>Payment Details</h3>
+            <form id="payment-form">
+                <label for="card-name">Name on Card:</label>
+                <input type="text" id="card-name" name="card-name" required>
+                <label for="card-number">Card Number:</label>
+                <input type="number" id="card-number" name="card-number" required>
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="number" id="expiry-date" name="expiry-date" required>
+                <label for="cvc">CVC:</label>
+                <input type="number" id="cvc" name="cvc" maxlength="4" pattern="\d{3,4}" required>
+                <button type="submit" id="finalize-checkout">Finalize Checkout</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
+    <script src="index.js" type="module"></script>
+</body>
+
+</html>
